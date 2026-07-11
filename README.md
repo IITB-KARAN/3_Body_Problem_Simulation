@@ -67,7 +67,7 @@ The Leapfrog Integrator was selected because it provides significantly better lo
 ## Figure-Eight Orbit
 
 <p align="center">
-<img src="Images/Eight_Orbit.jpeg" height="400" style="transform: rotate(-90deg);">
+<img src="Images/Eight_Orbit.jpeg" height="200">
 </p>
 ### Demonstration
 
@@ -80,7 +80,7 @@ The Leapfrog Integrator was selected because it provides significantly better lo
 ## Brucke A3
 
 <p align="center">
-<img src="Images/BruckeA3.jpeg" height="300" style="transform: rotate(-90deg);">
+<img src="Images/BruckeA3.jpeg" height="200" >
 </p>
 
 ### Demonstration
@@ -92,7 +92,7 @@ The Leapfrog Integrator was selected because it provides significantly better lo
 ## Brucke A11
 
 <p align="center">
-<img src="Images/BruckeA11.jpeg" height="300" style="transform: rotate(-90deg);">
+<img src="Images/BruckeA11.jpeg" height="200" >
 </p>
 
 ---
@@ -100,7 +100,7 @@ The Leapfrog Integrator was selected because it provides significantly better lo
 ## Brucke A14
 
 <p align="center">
-<img src="Images/BruckeA14.jpeg" height="300" style="transform: rotate(-90deg);">
+<img src="Images/BruckeA14.jpeg" height="200" >
 </p>
 
 ---
@@ -108,7 +108,7 @@ The Leapfrog Integrator was selected because it provides significantly better lo
 ## Loop-Ended Triangle
 
 <p align="center">
-<img src="Images/Loop_Ended_Triangle.jpeg" height="300" style="transform: rotate(-90deg);">
+<img src="Images/Loop_Ended_Triangle.jpeg" height="200">
 </p>
 
 ---
@@ -116,7 +116,7 @@ The Leapfrog Integrator was selected because it provides significantly better lo
 ## Yarn Orbit
 
 <p align="center">
-<img src="Images/Yarn.jpeg" height="300" style="transform: rotate(-90deg);">
+<img src="Images/Yarn.jpeg" height="200">
 </p>
 
 ---

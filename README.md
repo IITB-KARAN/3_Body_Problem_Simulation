@@ -1,141 +1,144 @@
-# Three-Body Problem Simulator
+#  Three-Body Problem Simulation
 
-A real-time **Three-Body Problem** simulator implemented on an **Arduino Uno**, utilizing the **Leapfrog Integration** algorithm to numerically solve Newtonian gravitational interactions. The simulation visualizes multiple periodic three-body orbits on an **ST7789 TFT display** and demonstrates the transition from stable periodic motion to chaotic dynamics through user-controlled mass perturbations.
-
----
-
-## Features
-
-- Real-time three-body gravitational simulation
-- Leapfrog Integration for stable numerical computation
-- Six periodic three-body orbit configurations
-- Interactive orbit selection using push buttons
-- Adjustable body mass for perturbation experiments
-- Center of Mass visualization
-- Persistent orbit trail rendering
-- Hardware implementation on Arduino Uno
+A real-time **Three-Body Problem Simulator** built on the **Arduino Uno** that numerically solves Newtonian gravitational interactions using the **Leapfrog Integration** algorithm. The simulator visualizes multiple periodic three-body orbits on an **ST7789 TFT display** while demonstrating how small perturbations in mass can transform stable periodic motion into chaotic behavior.
 
 ---
 
-# Hardware
+## 📌 Project Highlights
 
-### Components Used
+*  Real-time simulation of the classical Three-Body Problem
+*  Leapfrog Integration for improved numerical stability and energy conservation
+*  Six predefined periodic three-body orbit configurations
+*  Interactive orbit selection using push buttons
+* Adjustable body mass for perturbation experiments
+*  Center of Mass visualization
+*  Persistent trajectory rendering
+*  Fully implemented on an Arduino Uno
 
-- Arduino Uno
-- ST7789 TFT Display (240 × 320)
-- Breadboard
-- 3 Push Buttons
-- Resistors
-- Jumper Wires
+---
 
-### Hardware Setup
+#  Hardware
+
+## Components
+
+* Arduino Uno
+* ST7789 TFT Display (240 × 320)
+* Breadboard
+* 3 Push Buttons
+* Resistors
+* Jumper Wires
+
+## Hardware Setup
 
 <p align="center">
-<img src="Images/Hardware.jpeg" width="500">
+<img src="Images/Hardware.jpeg" width="650">
 </p>
 
 ---
 
-# Controls
+# 🎮 Controls
 
-| Button | Function |
-|---------|----------|
-| Button 1 | Change Orbit |
-| Button 2 | Increase Mass |
-| Button 3 | Reset Simulation |
+| Button       | Function                                     |
+| ------------ | -------------------------------------------- |
+| **Button 1** | Switch between periodic orbit configurations |
+| **Button 2** | Increase the mass of Body 1 by 0.1 units                |
+| **Button 3** | Reset the simulation                         |
 
 ---
 
-# Numerical Method
+#  Numerical Method
 
-The simulator models Newtonian gravitational interactions between three bodies.
+The simulator models the gravitational interaction between three bodies governed by **Newton's Law of Universal Gravitation**.
 
 For every simulation step:
 
-1. Compute gravitational forces
-2. Update body accelerations
-3. Perform Leapfrog Integration
-4. Update body positions
-5. Render trajectories on the TFT display
+1. Compute gravitational forces acting on each body.
+2. Calculate the resulting accelerations.
+3. Perform a Leapfrog Integration step.
+4. Update body positions and velocities.
+5. Render the new positions and trajectory trails on the TFT display.
 
-The Leapfrog Integrator was selected because it provides significantly better long-term energy conservation than the standard Euler method, making it well suited for orbital simulations.
+Unlike the standard Euler method, **Leapfrog Integration** preserves energy significantly better over long simulations, making it particularly suitable for orbital mechanics.
 
 ---
 
-# Gallery of Periodic Orbits
+# 🛰️ Periodic Orbit Gallery
 
 ## Figure-Eight Orbit
 
 <p align="center">
-<img src="Images/Eight_Orbit.jpeg" height="200">
+<img src="Images/Eight_Orbit.jpeg" width="500">
 </p>
-### Demonstration
 
-<!-- Replace the video path below -->
-
-<video src="Videos/Eight_Orbit.mp4" controls width="450"></video>
+The famous figure-eight solution where three equal masses continuously follow the same closed trajectory while remaining equally spaced in time.
 
 ---
 
 ## Brucke A3
 
 <p align="center">
-<img src="Images/BruckeA3.jpeg" height="200" >
+<img src="Images/BruckeA3.jpeg" width="500">
 </p>
 
-### Demonstration
-
-<video src="Videos/Brucke_A3.mp4" controls width="450"></video>
+A periodic solution characterized by symmetric looping trajectories and stable orbital repetition.
 
 ---
 
 ## Brucke A11
 
 <p align="center">
-<img src="Images/BruckeA11.jpeg" height="200" >
+<img src="Images/BruckeA11.jpeg" width="500">
 </p>
+
+Another stable periodic solution exhibiting unique orbital symmetry and repeating motion.
 
 ---
 
 ## Brucke A14
 
 <p align="center">
-<img src="Images/BruckeA14.jpeg" height="200" >
+<img src="Images/BruckeA14.jpeg" width="500">
 </p>
+
+A higher-order periodic orbit displaying intricate path crossings while maintaining long-term stability.
 
 ---
 
 ## Loop-Ended Triangle
 
 <p align="center">
-<img src="Images/Loop_Ended_Triangle.jpeg" height="200">
+<img src="Images/Loop_Ended_Triangle.jpeg" width="500">
 </p>
+
+A periodic orbit where the bodies repeatedly trace triangular looped trajectories.
 
 ---
 
 ## Yarn Orbit
 
 <p align="center">
-<img src="Images/Yarn.jpeg" height="200">
+<img src="Images/Yarn.jpeg" width="500">
 </p>
+
+An intricate periodic orbit whose intertwined trajectory resembles woven yarn.
 
 ---
 
 # Mass Perturbation Experiment
 
-One objective of this project was to demonstrate the sensitivity of periodic three-body systems to small parameter changes.
+One of the primary objectives of this project is to demonstrate the **sensitivity of the Three-Body Problem to small parameter changes**.
 
-The simulator allows the mass of one body to be increased while keeping the remaining bodies unchanged.
-
----
+The simulator allows the mass of one body to be increased while keeping the remaining bodies unchanged, enabling direct observation of how stable periodic motion transitions into chaotic dynamics.
 
 ## Stable Configuration
 
 **Mass = [1.0, 1.0, 1.0]**
 
-The system follows a stable periodic orbit over thousands of integration steps.
+The bodies repeatedly follow a stable periodic trajectory for thousands of simulation steps while preserving the overall orbital structure.
 
-<video src="Videos/Eight_Orbit.mp4" controls width="450"></video>
+<p align="center">
+<img src="Images/Eight_Orbit.jpeg" width="500">
+</p>
 
 ---
 
@@ -143,49 +146,48 @@ The system follows a stable periodic orbit over thousands of integration steps.
 
 **Mass = [1.1, 1.0, 1.0]**
 
-Increasing the mass of a single body destabilizes the periodic solution, causing the orbit to transition into chaotic motion.
-
+Increasing the mass of a single body disrupts the periodic solution, causing the orbit to gradually diverge into chaotic motion. This experiment illustrates the sensitive dependence on initial conditions that makes the Three-Body Problem one of the most fascinating problems in classical mechanics.
+<p align="center">
+<img src="Images/Eight_Orbit_Mass_Perturbation.jpeg" width="500">
 </p>
-
-<video src="Videos/Eight_Orbit_Mass_Perturbation.mp4" controls width="450"></video>
 
 ---
 
 ## Brucke A3 Perturbation
 
-The same perturbation experiment was repeated for the Brucke A3 orbit.
-
-A slight increase in mass similarly causes the periodic trajectory to deform and evolve into chaotic motion.
-
-<video src="Videos/Brucke_A3_Mass_Perturbation.mp4" controls width="450"></video>
+The same perturbation experiment was performed on the **Brucke A3** orbit. Even a slight increase in mass causes the previously periodic trajectory to deform and evolve into increasingly complex, non-repeating motion.
+<p align="center">
+<img src="Images/BruckeA3.jpeg" width="500">
+</p>
+<p align="center">
+<img src="Images/BruckeA3_Mass_Perturbation.png" width="300">
+</p>
 
 ---
 
-# Results
+#  Results
 
 - Successfully simulated six periodic three-body solutions.
-- Maintained stable orbital trajectories using Leapfrog Integration.
-- Visualized the system's center of mass throughout the simulation.
-- Demonstrated transition from periodic to chaotic motion through mass perturbation.
-- Implemented an interactive embedded visualization using Arduino Uno and ST7789 TFT.
+-  Achieved stable long-duration simulations using Leapfrog Integration.
+-  Visualized the system's center of mass in real time.
+-  Demonstrated the transition from periodic to chaotic motion through controlled mass perturbations.
+-  Developed a fully interactive embedded physics simulator using Arduino Uno and an ST7789 TFT display.
 
 ---
 
-# Software Stack
+# 🛠️ Software Stack
 
-- C++
-- Arduino IDE
-- Adafruit_GFX
-- Adafruit_ST7789
-- SPI
-- math.h
+* C++
+* Arduino IDE
+* Adafruit GFX Library
+* Adafruit ST7789 Library
+* SPI
+* math.h
 
 ---
-
-
 
 # References
 
-- Three-Body Problem periodic orbit datasets
-- Arduino Documentation
-- Adafruit ST7789 Library
+* Three-Body Problem periodic orbit datasets
+* Arduino Documentation
+* Adafruit ST7789 Library Documentation

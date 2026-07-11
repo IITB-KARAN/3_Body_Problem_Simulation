@@ -152,18 +152,31 @@ Increasing the mass of a single body disrupts the periodic solution, causing the
 </p>
 
 ---
+## Numerical Stability Demonstration
 
-## Brucke A3 Perturbation
+The simulator uses **Leapfrog Integration** to improve long-term energy conservation. However, close encounters between bodies still present a numerical challenge because the gravitational force increases rapidly as the distance between bodies decreases (**F ∝ 1/r²**).
 
-The same perturbation experiment was performed on the **Brucke A3** orbit. Even a slight increase in mass causes the previously periodic trajectory to deform and evolve into increasingly complex, non-repeating motion.
+To demonstrate the effect of integration step size, the simulation was tested using two different time steps.
+
+### Large Time Step (ΔT = 0.005)
+
 <p align="center">
-<img src="Images/BruckeA3.jpeg" width="500">
+<img src="Images/Yarn_timestep.jpeg" width="500">
 </p>
-<p align="center">
-<img src="Images/BruckeA3_Mass_Perturbation.png" width="300">
-</p>
+
+With a larger time step, the integrator cannot accurately resolve close encounters. The accumulated numerical error injects artificial energy into the system, causing unrealistic **slingshot-like trajectories** and eventual numerical instability.
 
 ---
+
+### Reduced Time Step (ΔT = 0.001)
+
+<p align="center">
+<img src="Images/Yarn.jpeg" width="500">
+</p>
+
+Reducing the time step significantly improves temporal resolution, allowing the Leapfrog Integrator to handle close gravitational interactions more accurately. The periodic orbit remains stable for much longer, delaying numerical divergence and preserving the expected orbital structure.
+
+Although the smaller time step increases the computational workload and slows the real-time simulation, it provides a substantial improvement in numerical stability, making it better suited for long-duration orbital simulations.
 
 #  Results
 
@@ -174,6 +187,8 @@ The same perturbation experiment was performed on the **Brucke A3** orbit. Even 
 -  Developed a fully interactive embedded physics simulator using Arduino Uno and an ST7789 TFT display.
 
 ---
+
+
 
 # 🛠️ Software Stack
 
